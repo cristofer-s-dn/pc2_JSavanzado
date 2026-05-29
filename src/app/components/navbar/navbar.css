@@ -1,0 +1,38 @@
+.navbar {
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+}
+
+.navbar-brand {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.8rem;
+  letter-spacing: 2px;
+}
+
+.brand-surf {
+  color: #ffffff;
+}
+
+.nav-link {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.8) !important;
+  transition: color 0.2s ease;
+  padding: 0.4rem 0.75rem;
+  border-radius: 4px;
+}
+
+.nav-link:hover {
+  color: #00bfff !important;
+}
+
+.active-link {
+  color: #00bfff !important;
+}
+
+.btn-outline-light {
+  font-size: 0.85rem;
+  border-radius: 20px;
+}

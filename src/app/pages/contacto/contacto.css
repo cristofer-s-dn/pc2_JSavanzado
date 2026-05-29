@@ -1,0 +1,33 @@
+.contacto-header {
+  background: linear-gradient(135deg, #001233 0%, #001f5b 60%, #003399 100%);
+  padding: 4rem 0;
+}
+
+.page-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3rem;
+  letter-spacing: 3px;
+}
+
+.form-heading {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.form-control:focus {
+  border-color: #001f5b;
+  box-shadow: 0 0 0 0.2rem rgba(0, 31, 91, 0.18);
+}
+
+.preview-box {
+  background-color: #f0f4ff;
+  border: 1px solid #c5d3f0;
+}
+
+.info-item p.fw-bold {
+  font-family: 'Nunito', sans-serif;
+  letter-spacing: 1px;
+}

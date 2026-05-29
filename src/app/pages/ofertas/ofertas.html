@@ -1,0 +1,60 @@
+<div class="ofertas-header py-5 text-white text-center">
+  <div class="container">
+    <h1 class="page-title mb-2">{{ 'ofertas especiales' | uppercase }}</h1>
+    <p class="lead text-white-50">30% de descuento en productos seleccionados</p>
+    <span class="badge fs-6 px-4 py-2 mt-2"
+      [ngStyle]="{'background-color': '#00bfff', 'color': '#001f5b', 'font-weight': '800'}">
+      {{ ofertasActivas }} ofertas disponibles
+    </span>
+  </div>
+</div>
+
+<div class="container py-5">
+  <div class="row g-4">
+    <div class="col-md-6 col-lg-4" *ngFor="let oferta of ofertas">
+      <div class="card oferta-card h-100 shadow"
+        [ngClass]="{'oferta-agotada': !oferta.activa, 'border-danger': oferta.activa}">
+
+        <div class="position-relative overflow-hidden">
+          <img
+            [src]="oferta.imagen"
+            [alt]="oferta.nombre"
+            class="card-img-top oferta-img"
+            [ngStyle]="{'filter': oferta.activa ? 'none' : 'grayscale(100%)'}">
+
+          <div class="descuento-badge position-absolute top-0 end-0 m-2" *ngIf="oferta.activa">
+            -{{ oferta.descuento }}%
+          </div>
+          <div class="agotada-badge position-absolute top-0 end-0 m-2" *ngIf="!oferta.activa">
+            Agotada
+          </div>
+        </div>
+
+        <div class="card-body">
+          <span class="badge mb-2" [ngStyle]="{'background-color': '#001f5b'}">
+            {{ oferta.categoria }}
+          </span>
+          <h5 class="card-title oferta-nombre">{{ oferta.nombre }}</h5>
+
+          <div class="d-flex align-items-center gap-3 mt-2">
+            <p class="text-decoration-line-through text-muted mb-0">
+              {{ oferta.precioOriginal | currency:'PEN':'S/ ':'1.2-2' }}
+            </p>
+            <p class="precio-oferta text-danger mb-0" *ngIf="oferta.activa">
+              {{ oferta.precioOferta | currency:'PEN':'S/ ':'1.2-2' }}
+            </p>
+          </div>
+        </div>
+
+        <div class="card-footer border-0 bg-transparent pb-3">
+          <button
+            class="btn w-100 text-white"
+            [ngStyle]="{'background-color': oferta.activa ? '#001f5b' : '#6c757d'}"
+            [disabled]="!oferta.activa">
+            {{ oferta.activa ? 'Comprar Ahora' : 'No Disponible' }}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

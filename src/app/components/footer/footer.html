@@ -1,0 +1,36 @@
+<footer [ngStyle]="{'background-color': '#001f5b'}">
+  <div class="container py-5 text-white">
+    <div class="row g-4">
+      <div class="col-md-4">
+        <h5 class="footer-brand mb-3">
+          <span [ngStyle]="{'color': '#00bfff'}">PERU</span>SURF
+        </h5>
+        <p class="text-white-50 small mb-0">
+          La tienda de surf mas completa de la costa peruana,
+          ubicada en el corazon de Punta Hermosa.
+        </p>
+      </div>
+      <div class="col-md-4">
+        <h6 class="footer-heading mb-3">Navegación</h6>
+        <ul class="list-unstyled small mb-0">
+          <li class="mb-1"><a routerLink="/home" class="footer-link">Inicio</a></li>
+          <li class="mb-1"><a routerLink="/tienda" class="footer-link">Tienda</a></li>
+          <li class="mb-1"><a routerLink="/ofertas" class="footer-link">Ofertas</a></li>
+          <li class="mb-1"><a routerLink="/contacto" class="footer-link">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <h6 class="footer-heading mb-3">Contacto</h6>
+        <address class="small text-white-50 mb-0">
+          <p class="mb-1">Punta Hermosa, Lima - Perú</p>
+          <p class="mb-1">info&#64;perusurf.pe</p>
+          <p class="mb-0">+51 987 654 321</p>
+        </address>
+      </div>
+    </div>
+    <hr [ngStyle]="{'border-color': '#003399', 'opacity': '1'}" class="mt-4">
+    <p class="text-center text-white-50 small mb-0">
+      Estudiante de Ingeniería de Sistemas - Sergio Davila {{ anio }}
+    </p>
+  </div>
+</footer>

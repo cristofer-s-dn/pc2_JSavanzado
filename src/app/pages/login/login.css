@@ -1,0 +1,20 @@
+.container {
+  background: linear-gradient(135deg, #001f5b 0%, #003399 100%);
+}
+
+.card {
+  border-radius: 12px;
+  border: none;
+}
+
+h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 1.5px;
+  color: #001f5b;
+  font-size: 2rem;
+}
+
+.form-control:focus {
+  border-color: #001f5b;
+  box-shadow: 0 0 0 0.2rem rgba(0, 31, 91, 0.2);
+}

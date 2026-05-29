@@ -1,0 +1,27 @@
+:root {
+  --azul-marino: #001f5b;
+  --azul-medio: #003399;
+  --azul-claro: #00bfff;
+  --azul-acento: #0057b7;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background-color: #f8f9fa;
+}
+
+h1, h2, h3, h4, h5,
+.navbar-brand,
+.display-1, .display-2, .display-3 {
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 1.5px;
+}
+
+.btn {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+}
+
+a {
+  transition: color 0.2s ease;
+}

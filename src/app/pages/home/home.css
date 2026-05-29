@@ -1,0 +1,84 @@
+.hero-section {
+  background: url('/assets/punta-hermosa.png') center center / cover no-repeat;
+  min-height: 88vh;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg,
+      rgba(0, 18, 51, 0.7) 0%,
+      rgba(0, 31, 91, 0.55) 50%,
+      rgba(0, 51, 153, 0.6) 100%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+}
+
+.hero-label {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+  font-size: 0.85rem;
+  letter-spacing: 3px;
+  color: #00bfff;
+}
+
+.hero-title {
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 3px;
+  line-height: 1;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.hero-subtitle {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.section-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+}
+
+.categoria-card {
+  border-top: 4px solid #001f5b !important;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.categoria-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0, 31, 91, 0.15) !important;
+}
+
+.categoria-icono {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+}
+
+.cta-section {
+  background: linear-gradient(135deg, #001f5b 0%, #003399 100%);
+}
+
+.cta-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.2rem;
+  letter-spacing: 2px;
+}
+
+.text-white-75 {
+  color: rgba(255, 255, 255, 0.75);
+}

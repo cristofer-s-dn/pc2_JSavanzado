@@ -1,0 +1,52 @@
+<section class="hero-section d-flex align-items-center justify-content-center text-white text-center">
+  <div class="hero-content">
+    <p class="hero-label text-uppercase mb-2">Punta Hermosa, Lima - Peru</p>
+    <h1 class="display-2 fw-bold hero-title">{{ tituloPrincipal | uppercase }}</h1>
+    <p class="lead fs-5 hero-subtitle">{{ subtitulo }}</p>
+    <div class="d-flex gap-3 justify-content-center mt-4">
+      <a routerLink="/tienda" class="btn btn-lg px-5 py-3"
+        [ngStyle]="{'background-color': '#00bfff', 'color': '#001f5b', 'font-weight': '800'}">
+        Ver Catálogo
+      </a>
+      <a routerLink="/ofertas" class="btn btn-lg btn-outline-light px-5 py-3">
+        Ver Ofertas
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="container py-5 mt-3">
+  <div class="text-center mb-5">
+    <h2 class="section-title" [ngStyle]="{'color': '#001f5b'}">{{ 'nuestras categorías' | uppercase }}</h2>
+    <p class="text-muted">Todo lo que necesitas para dominar las olas del Pacífico</p>
+  </div>
+  <div class="row g-4 justify-content-center">
+    <div class="col-md-4" *ngFor="let cat of categorias">
+      <div class="card text-center shadow-sm border-0 h-100 categoria-card">
+        <div class="card-body py-5 px-4">
+          <div class="categoria-icono mb-4 mx-auto" [ngStyle]="{'background-color': '#001f5b', 'color': 'white'}">
+            {{ cat.icono }}
+          </div>
+          <h4 class="card-title fw-bold" [ngStyle]="{'color': '#001f5b'}">{{ cat.nombre }}</h4>
+          <p class="card-text text-muted">{{ cat.descripcion }}</p>
+          <a routerLink="/tienda" class="btn btn-outline-primary mt-2"
+            [ngStyle]="{'border-color': '#001f5b', 'color': '#001f5b'}">
+            Explorar
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section py-5 text-white text-center">
+  <div class="container">
+    <h3 class="cta-title mb-3">Las mejores olas del Pacífico te esperan</h3>
+    <p class="lead mb-4 text-white-75">
+      Equipate con los mejores productos de surf disponibles en Peru.
+    </p>
+    <a routerLink="/contacto" class="btn btn-light btn-lg px-5" [ngStyle]="{'color': '#001f5b', 'font-weight': '700'}">
+      Contáctanos
+    </a>
+  </div>
+</section>

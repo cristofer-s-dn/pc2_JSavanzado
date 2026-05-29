@@ -1,0 +1,123 @@
+<div class="dashboard-wrapper" *ngIf="usuario">
+  <div class="dashboard-header py-4 mb-4">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center flex-wrap gap-3">
+        <div>
+          <h1 class="dashboard-title mb-1" [ngStyle]="{'color': '#ffffff'}">
+            {{ 'panel de administración' | uppercase }}
+          </h1>
+          <p class="mb-0 text-white-50 small">
+            Bienvenido de vuelta, <strong class="text-white">{{ usuario.nombre }}</strong>
+          </p>
+        </div>
+        <button class="btn btn-danger px-4" (click)="cerrarSesion()">Cerrar Sesión</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="container pb-5">
+    <div class="alert alert-info d-flex align-items-center gap-2 mb-4" *ngIf="usuario">
+      <strong>Sesión activa:</strong>
+      {{ usuario.nombre }} &mdash; {{ usuario.correo }} &mdash; Rol: {{ usuario.rol }}
+    </div>
+
+    <div class="row g-4 mb-5">
+      <div class="col-6 col-md-3">
+        <div class="stat-card text-white text-center"
+          [ngStyle]="{'background': 'linear-gradient(135deg, #001f5b, #003399)'}">
+          <div class="stat-number">{{ estadisticas.totalProductos }}</div>
+          <div class="stat-label">Productos</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="stat-card text-white text-center"
+          [ngStyle]="{'background': 'linear-gradient(135deg, #198754, #20c997)'}">
+          <div class="stat-number">{{ estadisticas.totalVentas }}</div>
+          <div class="stat-label">Ventas del Mes</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="stat-card text-white text-center"
+          [ngStyle]="{'background': 'linear-gradient(135deg, #0057b7, #00bfff)'}">
+          <div class="stat-number small-number">
+            {{ estadisticas.ingresosMes | currency:'PEN':'S/ ':'1.0-0' }}
+          </div>
+          <div class="stat-label">Ingresos</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="stat-card text-white text-center"
+          [ngStyle]="{'background': 'linear-gradient(135deg, #6f42c1, #d63384)'}">
+          <div class="stat-number">{{ estadisticas.clientesActivos }}</div>
+          <div class="stat-label">Clientes Activos</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-8">
+        <div class="card border-0 shadow-sm">
+          <div class="card-header py-3" [ngStyle]="{'background-color': '#001f5b', 'color': 'white'}">
+            <h6 class="mb-0 section-heading">Pedidos Recientes</h6>
+          </div>
+          <div class="card-body p-0">
+            <table class="table table-hover mb-0">
+              <thead class="table-light">
+                <tr>
+                  <th>ID</th>
+                  <th>Cliente</th>
+                  <th>Producto</th>
+                  <th>Monto</th>
+                  <th>Estado</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let pedido of pedidosRecientes">
+                  <td class="fw-bold text-muted">#{{ pedido.id }}</td>
+                  <td>{{ pedido.cliente }}</td>
+                  <td>{{ pedido.producto }}</td>
+                  <td>{{ pedido.monto | currency:'PEN':'S/ ':'1.2-2' }}</td>
+                  <td><span [ngClass]="estadoClase(pedido.estado)">{{ pedido.estado }}</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card border-0 shadow-sm h-100">
+          <div class="card-header py-3" [ngStyle]="{'background-color': '#001f5b', 'color': 'white'}">
+            <h6 class="mb-0 section-heading">Informacion del Usuario</h6>
+          </div>
+          <div class="card-body">
+            <table class="table table-bordered table-sm" *ngIf="usuario">
+              <tbody>
+                <tr>
+                  <th class="text-muted small">Nombre</th>
+                  <td>{{ usuario.nombre }}</td>
+                </tr>
+                <tr>
+                  <th class="text-muted small">Correo</th>
+                  <td>{{ usuario.correo }}</td>
+                </tr>
+                <tr>
+                  <th class="text-muted small">Rol</th>
+                  <td>
+                    <span class="badge" [ngStyle]="{'background-color': '#001f5b'}">
+                      {{ usuario.rol }}
+                    </span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <a routerLink="/mi-cuenta" class="btn btn-outline-primary w-100 mt-2"
+              [ngStyle]="{'border-color': '#001f5b', 'color': '#001f5b'}">
+              Ver Mi Cuenta
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

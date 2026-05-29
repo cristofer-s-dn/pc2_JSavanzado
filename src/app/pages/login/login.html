@@ -1,0 +1,23 @@
+<div class="container d-flex justify-content-center align-items-center vh-100">
+    <div class="card shadow p-4" style="width: 400px;">
+        <h2 class="text-center mb-4">Iniciar Sesi&oacute;n</h2>
+        <form (ngSubmit)="iniciarSesion()">
+            <div class="mb-3">
+                <label class="form-label">Correo</label>
+                <input type="email" class="form-control" name="correo" [(ngModel)]="correo"
+                    placeholder="Ingrese su correo" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Contrase&ntilde;a</label>
+                <input type="password" class="form-control" name="password" [(ngModel)]="password"
+                    placeholder="Ingrese su contrase&ntilde;a" required>
+            </div>
+            <div class="alert alert-danger py-2 small" *ngIf="error">{{ error }}</div>
+            <div class="alert alert-info py-2 small mb-3" *ngIf="!error">
+                prueba: admin&#64;perusurf.pe / admin123
+            </div>
+            <button type="submit" class="btn btn-primary w-100"
+                [ngStyle]="{'background-color': '#000080'}">Ingresar</button>
+        </form>
+    </div>
+</div>
